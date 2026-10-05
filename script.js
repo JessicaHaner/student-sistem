@@ -4,7 +4,7 @@ const readline = require("readline-sync");
 // SISTEMA DE ALUNOS
 // ========================================
 
-let alunos = [];
+const alunos = [];
 
 let executando = true;
 
@@ -38,18 +38,24 @@ while (executando) {
             // TODO:
             // Verificar se a nota está entre 0 e 10
             if (nota >= 0 && nota  <= 10) {
-                console.log("uhuuuuul");
+                // TODO:
+              // Criar um objeto aluno
+              let aluno = {
+                nome: nome,
+                idade: idade,
+                nota: nota
+
+              };
+
+                //TODO
+                // Adicionar o aluno ao array
+                alunos.push(aluno);
             } else {
                 console.log("A nota é inválida. Por favor digite um número de 0 à 10: ");
             }
 
-            // TODO:
-            // Criar um objeto aluno
-
-            // TODO:
-            // Adicionar o aluno ao array
-
-
+      
+            console.log(alunos)
             break;
 
 
@@ -62,6 +68,17 @@ while (executando) {
 
             // TODO:
             // Verificar se existem alunos cadastrados
+            if(alunos.length != 0) {
+                for (i = 0; i < alunos.length; i++){
+                    console.log(
+                        "Id: " + (i + 1) + "\n" +
+                        "Nome: " + alunos[i].nome + "\n" +
+                        "Idade: " + alunos[i].idade + "\n" +
+                        "Nota: " + alunos[i].nota + "\n"
+                    )
+                        
+                }
+            }
 
             // TODO:
             // Percorrer o array utilizando FOR
